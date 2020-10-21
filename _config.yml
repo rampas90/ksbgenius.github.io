@@ -23,7 +23,7 @@ email: ksbgenius@naver.com
 description: >- # this means to ignore newlines until "baseurl:"
   Vue, Nuxt, PHP, Wordpress, 서버 관련 기술블로그
 # baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://ksbgenius.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ksbgenius.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  ksbgenius
 linkedin_username: ksbgenius

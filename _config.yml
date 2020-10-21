@@ -28,6 +28,7 @@ url: "https://ksbgenius.github.io" # the base hostname & protocol for your site,
 github_username:  ksbgenius
 linkedin_username: ksbgenius
 lang: kr
+google_analytics: "G-GLRB0V9TJ9"
 
 # Build settings
 theme: minima

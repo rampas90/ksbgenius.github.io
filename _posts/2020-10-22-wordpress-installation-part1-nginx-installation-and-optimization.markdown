@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[Wordpress] 설치하기 1부 - Nginx 설치 및 최적화"
-description: "VirtualBox에 Ubuntu 20.04.1 LTS Server 설치하기"
+description: "Ubuntu 20.04.1 LTS에 워드프레스 설치를 위한 Nginx 설치 및 최적화"
 date:   2020-10-22 01:32:00 +0900
 categories: Wordpress
 ---

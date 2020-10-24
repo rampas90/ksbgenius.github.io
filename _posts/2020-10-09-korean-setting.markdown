@@ -48,11 +48,4 @@ Timezone을 UTC+9로 변경 후
 Save Changes만 해주면 한글 설정이 완료 됩니다.
 ![한글 설정하기-4](/assets/images/2020-10-09/korean-setting-4.png)
 
-
-
-
-
-
-
-
 이상으로 워드프레스에서 한글 설정하기 였습니다.

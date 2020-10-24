@@ -2,7 +2,7 @@
 layout: post
 title:  "[Wordpress] 설치하기 2부 - PHP-FPM 설치 및 설정"
 description: "Ubuntu 20.04.1 LTS에 워드프레스 설치를 위한 PHP-FPM 설치 및 설정"
-date:   2020-10-23 08:28:00 +0900
+date:   2020-09-15 09:00:00 +0900
 categories: Wordpress
 ---
 >Ubuntu 20.04.1 LTS에 워드프레스 설치를 위해  

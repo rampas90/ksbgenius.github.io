@@ -14,13 +14,13 @@ categories: Wordpress
 ```
 sudo apt update && apt upgrade -y
 ```
-![Nginx 설치 및 최적화-1](/assets/images/2020-10-22/nginx-installation-and-optimization-1.png)
+![Nginx 설치 및 최적화-1](/assets/images/2020-09-10/nginx-installation-and-optimization-1.png)
 
 2. nginx 패키지 설치이전에 선행작업 진행  
 ```
 sudo apt install curl gnupg2 ca-certificates lsb-release
 ```
-![Nginx 설치 및 최적화-2](/assets/images/2020-10-22/nginx-installation-and-optimization-2.png)
+![Nginx 설치 및 최적화-2](/assets/images/2020-09-10/nginx-installation-and-optimization-2.png)
 
 --- 
 
@@ -30,22 +30,22 @@ sudo apt install curl gnupg2 ca-certificates lsb-release
 sudo apt update
 sudo apt install nginx -y
 ```
-![Nginx 설치 및 최적화-3](/assets/images/2020-10-22/nginx-installation-and-optimization-3.png)
-![Nginx 설치 및 최적화-4](/assets/images/2020-10-22/nginx-installation-and-optimization-4.png)
+![Nginx 설치 및 최적화-3](/assets/images/2020-09-10/nginx-installation-and-optimization-3.png)
+![Nginx 설치 및 최적화-4](/assets/images/2020-09-10/nginx-installation-and-optimization-4.png)
 
 2. Nginx 시작
 ```
 sudo systemctl start nginx.service
 ```
-![Nginx 설치 및 최적화-5](/assets/images/2020-10-22/nginx-installation-and-optimization-5.png)
+![Nginx 설치 및 최적화-5](/assets/images/2020-09-10/nginx-installation-and-optimization-5.png)
 
 3. Nginx 상태 및 버전확인
 ```
 systemctl status nginx.service
 nginx -v
 ```
-![Nginx 설치 및 최적화-6](/assets/images/2020-10-22/nginx-installation-and-optimization-6.png)
-![Nginx 설치 및 최적화-7](/assets/images/2020-10-22/nginx-installation-and-optimization-7.png)
+![Nginx 설치 및 최적화-6](/assets/images/2020-09-10/nginx-installation-and-optimization-6.png)
+![Nginx 설치 및 최적화-7](/assets/images/2020-09-10/nginx-installation-and-optimization-7.png)
 
 ---
 
@@ -54,7 +54,7 @@ nginx -v
 ```
 sudo systemctl enable nginx.service
 ```
-![Nginx 설치 및 최적화-8](/assets/images/2020-10-22/nginx-installation-and-optimization-8.png)
+![Nginx 설치 및 최적화-8](/assets/images/2020-09-10/nginx-installation-and-optimization-8.png)
 
 ---
 
@@ -63,10 +63,10 @@ sudo systemctl enable nginx.service
 ```
 sudo netstat -lntp
 ```
-![Nginx 설치 및 최적화-9](/assets/images/2020-10-22/nginx-installation-and-optimization-9.png)
+![Nginx 설치 및 최적화-9](/assets/images/2020-09-10/nginx-installation-and-optimization-9.png)
 
 2. 웹브라우저에서 설치된 서버 ip로 접속
-![Nginx 설치 및 최적화-10](/assets/images/2020-10-22/nginx-installation-and-optimization-10.png)
+![Nginx 설치 및 최적화-10](/assets/images/2020-09-10/nginx-installation-and-optimization-10.png)
 
 ---
 
@@ -82,7 +82,7 @@ ps -ef | grep nginx
 ```
 
     설정 전
-![Nginx 설치 및 최적화-11](/assets/images/2020-10-22/nginx-installation-and-optimization-11.png)
+![Nginx 설치 및 최적화-11](/assets/images/2020-09-10/nginx-installation-and-optimization-11.png)
 
     현재 작업중인 서버의 CPU 프로세스 개수는 2개이며  
     worker_process가 auto로 설정되어 있어  
@@ -120,19 +120,19 @@ ps -ef | grep nginx
         worker_connections 1024;
     }
     ```
-    ![Nginx 설치 및 최적화-12](/assets/images/2020-10-22/nginx-installation-and-optimization-12.png)
+    ![Nginx 설치 및 최적화-12](/assets/images/2020-09-10/nginx-installation-and-optimization-12.png)
 
     설정 후 Nginx 재시작
 ```
 sudo systemctl restart nginx.service
 ```
-![Nginx 설치 및 최적화-13](/assets/images/2020-10-22/nginx-installation-and-optimization-13.png)
+![Nginx 설치 및 최적화-13](/assets/images/2020-09-10/nginx-installation-and-optimization-13.png)
 
     worker process 재확인
 ```
 ps -ef | grep nginx
 ```
-![Nginx 설치 및 최적화-14](/assets/images/2020-10-22/nginx-installation-and-optimization-14.png)
+![Nginx 설치 및 최적화-14](/assets/images/2020-09-10/nginx-installation-and-optimization-14.png)
 `nginx: worker process` 가 4개로 변경된 것이 보여집니다.
 
 ---

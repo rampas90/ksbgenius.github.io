@@ -15,13 +15,13 @@ Nginx에서 PHP 파일을 읽을 수 있도록 php-fpm을 설치해보도록 하
 ```
 sudo apt install -y php7.4-fpm php7.4-gd php7.4-json php7.4-mysql php7.4-curl php7.4-mbstring php7.4-intl php-imagick php7.4-xml php7.4-zip
 ```
-![PHP-FPM 설치 및 설정-1](/assets/images/2020-10-23/php-fpm-install-and-configure-1.png)
+![PHP-FPM 설치 및 설정-1](/assets/images/2020-09-15/php-fpm-install-and-configure-1.png)
 
 * PHP 설치확인
 ```
 php -v
 ```
-![PHP-FPM 설치 및 설정-2](/assets/images/2020-10-23/php-fpm-install-and-configure-2.png)
+![PHP-FPM 설치 및 설정-2](/assets/images/2020-09-15/php-fpm-install-and-configure-2.png)
 
 ---
 
@@ -36,20 +36,20 @@ sudo vi /etc/php/7.4/fpm/pool.d/www.conf
 ;listen = /run/php/php7.4-fpm.sock
 listen = 127.0.0.1:9000
 ```
-![PHP-FPM 설치 및 설정-3](/assets/images/2020-10-23/php-fpm-install-and-configure-3.png)
+![PHP-FPM 설치 및 설정-3](/assets/images/2020-09-15/php-fpm-install-and-configure-3.png)
 
 * PHP 재시작
 ```
 sudo systemctl restart php7.4-fpm.service
 ```
-![PHP-FPM 설치 및 설정-4](/assets/images/2020-10-23/php-fpm-install-and-configure-4.png)
+![PHP-FPM 설치 및 설정-4](/assets/images/2020-09-15/php-fpm-install-and-configure-4.png)
 
 * 수신확인
 ```
 sudo netstat -lntp
 ```
 `127.0.0.1:9000` 수신확인
-![PHP-FPM 설치 및 설정-6](/assets/images/2020-10-23/php-fpm-install-and-configure-6.png)  
+![PHP-FPM 설치 및 설정-6](/assets/images/2020-09-15/php-fpm-install-and-configure-6.png)  
 
 ---
 
@@ -58,7 +58,7 @@ sudo netstat -lntp
 ```
 ps -ef | grep php
 ```
-![PHP-FPM 설치 및 설정-7](/assets/images/2020-10-23/php-fpm-install-and-configure-7.png)
+![PHP-FPM 설치 및 설정-7](/assets/images/2020-09-15/php-fpm-install-and-configure-7.png)
 
 2. 설정값 변경
 ```
@@ -71,20 +71,20 @@ pm.start_servers = 12
 pm.min_spare_servers = 6
 pm.max_spare_servers = 18
 ```
-![PHP-FPM 설치 및 설정-8](/assets/images/2020-10-23/php-fpm-install-and-configure-8.png)
+![PHP-FPM 설치 및 설정-8](/assets/images/2020-09-15/php-fpm-install-and-configure-8.png)
 
 3. PHP 재시작
 ```
 sudo systemctl restart php7.4-fpm.service
 ```
-![PHP-FPM 설치 및 설정-9](/assets/images/2020-10-23/php-fpm-install-and-configure-9.png)
+![PHP-FPM 설치 및 설정-9](/assets/images/2020-09-15/php-fpm-install-and-configure-9.png)
 
 4. 프로세스 확인
 ```
 ps -ef | grep php
 ```
 아래처럼 변경된 걸 확인
-![PHP-FPM 설치 및 설정-10](/assets/images/2020-10-23/php-fpm-install-and-configure-10.png)
+![PHP-FPM 설치 및 설정-10](/assets/images/2020-09-15/php-fpm-install-and-configure-10.png)
 
 ---
 
@@ -100,15 +100,15 @@ memory_limit = 1024M
 post_max_size = 128M
 upload_max_filesize = 128M
 ```
-![PHP-FPM 설치 및 설정-11](/assets/images/2020-10-23/php-fpm-install-and-configure-11.png)
-![PHP-FPM 설치 및 설정-12](/assets/images/2020-10-23/php-fpm-install-and-configure-12.png)
-![PHP-FPM 설치 및 설정-13](/assets/images/2020-10-23/php-fpm-install-and-configure-13.png)
+![PHP-FPM 설치 및 설정-11](/assets/images/2020-09-15/php-fpm-install-and-configure-11.png)
+![PHP-FPM 설치 및 설정-12](/assets/images/2020-09-15/php-fpm-install-and-configure-12.png)
+![PHP-FPM 설치 및 설정-13](/assets/images/2020-09-15/php-fpm-install-and-configure-13.png)
 
 2. PHP 재시작
 ```
 sudo systemctl restart php7.4-fpm.service
 ```
-![PHP-FPM 설치 및 설정-14](/assets/images/2020-10-23/php-fpm-install-and-configure-14.png)
+![PHP-FPM 설치 및 설정-14](/assets/images/2020-09-15/php-fpm-install-and-configure-14.png)
 
 ---
 
@@ -237,7 +237,7 @@ server {
 ```
 sudo systemctl restart nginx.service
 ```
-![PHP-FPM 설치 및 설정-15](/assets/images/2020-10-23/php-fpm-install-and-configure-15.png)
+![PHP-FPM 설치 및 설정-15](/assets/images/2020-09-15/php-fpm-install-and-configure-15.png)
 
 ---
 
@@ -258,7 +258,7 @@ phpinfo();
 ```
 
 3. 웹에서 IP 접속
-![PHP-FPM 설치 및 설정-16](/assets/images/2020-10-23/php-fpm-install-and-configure-16.png)
+![PHP-FPM 설치 및 설정-16](/assets/images/2020-09-15/php-fpm-install-and-configure-16.png)
 
 4. 정상 작동 되는걸 확인
 

@@ -10,7 +10,7 @@ categories: Wordpress
 
 ## MariaDB 설치
 [공식사이트](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&distro_release=focal%E2%80%93ubuntu_focal&mirror=yongbok&version=10.5){: target="_blank"}에서 현재 최신버전과 그에 맞는 Stable 버전을 확인할 수있습니다.
-![MariaDB 설치-1](/assets/images/2020-10-23/mariadb-installation-1.png)
+![MariaDB 설치-1](/assets/images/2020-09-19/mariadb-installation-1.png)
 
 여기서 지시하는대로 설치를 진행하겠습니다
 
@@ -20,25 +20,25 @@ sudo apt-get install software-properties-common
 sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
 sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://mirror.yongbok.net/mariadb/repo/10.5/ubuntu focal main'
 ```
-![MariaDB 설치-2](/assets/images/2020-10-23/mariadb-installation-2.png)
-![MariaDB 설치-3](/assets/images/2020-10-23/mariadb-installation-3.png)
-![MariaDB 설치-4](/assets/images/2020-10-23/mariadb-installation-4.png)
+![MariaDB 설치-2](/assets/images/2020-09-19/mariadb-installation-2.png)
+![MariaDB 설치-3](/assets/images/2020-09-19/mariadb-installation-3.png)
+![MariaDB 설치-4](/assets/images/2020-09-19/mariadb-installation-4.png)
 
 이제 apt 업데이트 후 에 mariadb 서버를 설치하겠습니다
 ```
 sudo apt update
 sudo apt install mariadb-server
 ```
-![MariaDB 설치-5](/assets/images/2020-10-23/mariadb-installation-5.png)
-![MariaDB 설치-6](/assets/images/2020-10-23/mariadb-installation-6.png)
+![MariaDB 설치-5](/assets/images/2020-09-19/mariadb-installation-5.png)
+![MariaDB 설치-6](/assets/images/2020-09-19/mariadb-installation-6.png)
 
 설치확인은 `mariadb -V`를 입력하면 됩니다
-![MariaDB 설치-7](/assets/images/2020-10-23/mariadb-installation-7.png)
+![MariaDB 설치-7](/assets/images/2020-09-19/mariadb-installation-7.png)
 
 상태조회
 ```
 systemctl status mariadb.service
 ```
-![MariaDB 설치-8](/assets/images/2020-10-23/mariadb-installation-8.png)
+![MariaDB 설치-8](/assets/images/2020-09-19/mariadb-installation-8.png)
 
 이상으로 Wordpress 설치하기 3부 - MariaDB 설치였습니다.

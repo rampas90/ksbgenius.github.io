@@ -22,7 +22,7 @@ MariaDB용 폴더를 따로 생성해주도록 하겠습니다.
 ```
 sudo -i
 ```
-![MariaDB 최적화 하기 — 램디스크 설정-1](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-1.png)
+![MariaDB 최적화 하기 — 램디스크 설정-1](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-1.png)
 
 ## 진행 환경
 Ubuntu 20.04.1 LTS Server
@@ -32,7 +32,7 @@ DB접속
 ```
 mysql -u root -p
 ```
-![MariaDB 최적화 하기 — 램디스크 설정-2](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-2.png)
+![MariaDB 최적화 하기 — 램디스크 설정-2](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-2.png)
 
 확인
 ```
@@ -41,14 +41,14 @@ SHOW VARIABLES LIKE 'tmpdir';
 현재 `tmpdir`이 `/tmp`로 설정되어 있습니다.  
 이 값을 `/dev/shm`으로 변경 할 예정입니다.
 
-![MariaDB 최적화 하기 — 램디스크 설정-3](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-3.png)
+![MariaDB 최적화 하기 — 램디스크 설정-3](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-3.png)
 
 ## 램디스크 확인
 ```
 df -h
 ```
 `tmpfs`가 램디스크입니다.
-![MariaDB 최적화 하기 — 램디스크 설정-4](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-4.png)
+![MariaDB 최적화 하기 — 램디스크 설정-4](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-4.png)
 
 여기서는 `/dev/shm` 폴더를 사용하도록 하겠습니다.
 
@@ -56,37 +56,37 @@ df -h
 ```
 chmod 1777 /dev/shm
 ```
-![MariaDB 최적화 하기 — 램디스크 설정-5](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-5.png)
+![MariaDB 최적화 하기 — 램디스크 설정-5](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-5.png)
 
 ## MariaDB 설정파일 변경(my.cnf)
 ```
 vi /etc/mysql/mariadb.conf.d/50-server.cnf
 ```
-![MariaDB 최적화 하기 — 램디스크 설정-6](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-6.png)
+![MariaDB 최적화 하기 — 램디스크 설정-6](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-6.png)
 
 `[mysqld]`아래 `tmpdir` 경로를  
 방금 설정한 `/dev/shm`로 변경 후  
 `:wq` 로 저장 합니다.
-![MariaDB 최적화 하기 — 램디스크 설정-7](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-7.png)
+![MariaDB 최적화 하기 — 램디스크 설정-7](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-7.png)
 
 MariaDB 재시작
 ```
 systemctl restart mariadb.service
 ```
-![MariaDB 최적화 하기 — 램디스크 설정-8](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-8.png)
+![MariaDB 최적화 하기 — 램디스크 설정-8](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-8.png)
 
 ## 동작 확인
 DB접속
 ```
 mysql -u root -p
 ```
-![MariaDB 최적화 하기 — 램디스크 설정-9](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-9.png)
+![MariaDB 최적화 하기 — 램디스크 설정-9](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-9.png)
 
 확인
 ```
 SHOW VARIABLES LIKE 'tmpdir';
 ```
 `tmpdir`이 `/tmp`에서 `/dev/shm`으로 변경된 것을 확인할 수 있습니다.
-![MariaDB 최적화 하기 — 램디스크 설정-10](/assets/images/2020-10-24/optimizing-mariadb-using-ramdisk-10.png)
+![MariaDB 최적화 하기 — 램디스크 설정-10](/assets/images/2020-09-28/optimizing-mariadb-using-ramdisk-10.png)
 
 이상으로 MariaDB 최적화 하기 — 램디스크 설정이었습니다.

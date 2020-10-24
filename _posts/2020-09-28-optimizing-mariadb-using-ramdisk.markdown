@@ -2,7 +2,7 @@
 layout: post
 title:  "[Wordpress] MariaDB 최적화 하기 — 램디스크 설정"
 description: "워드프레스에서 MariaDB 최적화를 위한 램디스크 설정하기"
-date:   2020-10-24 02:13:00 +0900
+date:   2020-09-28 09:00:00 +0900
 categories: Wordpress
 ---
 

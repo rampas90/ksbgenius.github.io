@@ -2,7 +2,7 @@
 layout: post
 title:  "[Wordpress] 설치하기 4부 - DB 셋팅 및 워드프레스 설치"
 description: "Ubuntu 20.04.1 LTS에 워드프레스 설치를 위한 DB 셋팅 및 워드프레스 설치"
-date:   2020-10-23 13:34:00 +0900
+date:   2020-09-23 09:00:00 +0900
 categories: Wordpress
 ---
 >Ubuntu 20.04.1 LTS에 워드프레스 설치를 위해  

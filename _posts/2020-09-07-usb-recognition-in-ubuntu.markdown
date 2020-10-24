@@ -2,7 +2,7 @@
 layout: post
 title:  "[VirtualBox] 우분투에서 USB 인식"
 description: "우분투에서 VirtualBox 설치 후 USB인식이 되지 않는 현상 해결방법"
-date:   2020-10-20 12:27:00 +0900
+date:   2020-09-07 09:00:00 +0900
 categories: VirtualBox
 ---
 

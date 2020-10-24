@@ -2,7 +2,7 @@
 layout: post
 title:  "[Wordpress] 설치하기 3부 - MariaDB 설치"
 description: "Ubuntu 20.04.1 LTS에 워드프레스 설치를 위한 MariaDB 설치"
-date:   2020-10-23 09:28:00 +0900
+date:   2020-09-19 09:00:00 +0900
 categories: Wordpress
 ---
 >Ubuntu 20.04.1 LTS에 워드프레스 설치를 위해  

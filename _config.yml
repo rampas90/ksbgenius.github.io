@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 레미의 기술블로그
+title: 나도 개발자다
 email: ksbgenius@naver.com
 description: >- # this means to ignore newlines until "baseurl:"
   Vue, Nuxt, PHP, Wordpress, 서버 관련 기술블로그

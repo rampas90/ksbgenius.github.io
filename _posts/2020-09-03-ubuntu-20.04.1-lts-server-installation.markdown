@@ -5,117 +5,138 @@ description: "VirtualBox에 Ubuntu 20.04.1 LTS Server 설치하기"
 date:   2020-09-03 09:00:00 +0900
 categories: VirtualBox
 ---
-
-
 ## 이미지 생성
-1. VirtualBox 실행 및 새로만들기 클릭
+VirtualBox 실행 및 새로만들기를 클릭합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-1](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-1.png)
 
-2. 이미지 이름 및 운영체제 버전 선택
+이미지 이름 및 운영체제 종류와 버전을 선택합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-2](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-2.png)
 
-3. 메모리 설정  
-기본은 1024MB 이지만, 사용중인 메모리 용량에 따라 변경가능합니다.
+메모리를 적당히 설정 후, 다음을 클릭합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-3](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-3.png)
 
-4. 하드 디스크 설정
+하드디스크는  
+`지금 새 가상 하드 디스크 만들기` 선택 후, 만들기를 클릭합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-4](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-4.png)
 
-5. 하드 디스크 파일 종류 설정
+하드 디스크 파일 종류는  
+`VDI` 선택 후, 다음을 클릭합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-5](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-5.png)
 
-6. 물리적 하드 드라이브 저장 설정
+물리적 하드 드라이브에 저장은  
+`동적 할당` 선택 후, 다음 클릭
 ![Ubuntu 20.04.1 LTS Server 설치-6](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-6.png)
 
-7. 파일 위치 및 크기 설정  
-파일 위치는 기본값으로 설정된 위치 사용  
-기본 용량은 10GB 이지만, 사용중인 하드 디스크 용량에 따라 변경가능합니다.
+파일 위치는 기본값으로 설정된 위치를 사용하고  
+하드 디스크 용량을 적당하게 설정 후, 만들기를 클릭합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-7](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-7.png)
 
-8. 이미지 생성 완료
+좌측 목록에 새롭게 만든  
+이미지가 생성 되었습니다.
 ![Ubuntu 20.04.1 LTS Server 설치-8](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-8.png)
 
----
+
 
 ## 이미지 네트워크 설정
-1. 네트워크 영역의 `어댑터에 브릿지` 선택  
-이름 및 어댑터 종류의 명칭은 다를 수 있습니다.
+생성된 이미지 선택 후, `설정`을 클릭합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-9](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-9.png)
 
----
+좌측 `네트워크` 메뉴 선택 후, `어댑터 1` 탭에서  
+`다음에 연결됨` 부분을 `어댑터에 브리지`로 선택 후, 확인을 클릭합니다.
 
-## 우분투 20.04.1 LTS 설치
-1. 우분투 서버 다운로드  
-Ubuntu 20.04.1 LTS Server 다운로드: [https://ubuntu.com/download/server][Ubuntu 20.04.1 LTS Server 다운로드 링크]{: target="_blank"}  
+여기서  
+이름은 `enp8s0`  
+어댑터 종류는 `Intel PRO/1000 MT Desktop(82540EM)`로 선택되어 있는데 
 
-2. 시동 디스크 선택
+이름 및 어댑터 종류의 명칭은 다를 수 있습니다.
 ![Ubuntu 20.04.1 LTS Server 설치-10](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-10.png)
 
-3. 광학 디스크 추가
+
+
+## 우분투 20.04.1 LTS 설치
+먼저, 우분투 서버를 다운로드합니다.  
+Ubuntu 20.04.1 LTS Server 다운로드: [https://ubuntu.com/download/server](https://ubuntu.com/download/server){: target="_blank"}
+
+새롭게 생성한 이미지를 시작합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-11](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-11.png)
 
-4. 다운받은 우분투 20.04.1 서버 ISO 파일 선택
+
+
+시동 디스크 선택을 위해 폴더모양 버튼을 클릭합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-12](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-12.png)
 
-5. 추가된 광학 디스크 선택
+
+추가 버튼을 클릭합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-13](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-13.png)
 
-6. 설치 시작  
+다운받은 우분투 20.04.1 서버 ISO 파일을 선택합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-14](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-14.png)
 
-7. English 언어 선택
+추가된 광학 디스크 클릭 후 선택 버튼을 클릭합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-15](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-15.png)
 
-8. Update to the new installer 선택
+시동 디스크가 우분투 파일로 설정되었습니다.  
+시작 버튼을 클릭합니다.  
 ![Ubuntu 20.04.1 LTS Server 설치-16](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-16.png)
+
+언어설정 English 언어를 선택합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-17](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-17.png)
 
-9. 키보드 레이아웃 English US 선택
+설치 프로그램 업데이트를 위해  
+Update to the new installer를 선택합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-18](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-18.png)
-
-10. 네트워크 수동 설정
 ![Ubuntu 20.04.1 LTS Server 설치-19](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-19.png)
+
+키보드 레이아웃 English US를 선택합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-20](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-20.png)
 
-11. 프록시 설정(기본값)
+네트워크는 자동으로 설정해도 되지만  
+여기서는 고정IP를 사용하기 위해  
+수동으로 설정합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-21](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-21.png)
-
-12. 미러 사이트 설정(기본값)
 ![Ubuntu 20.04.1 LTS Server 설치-22](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-22.png)
-
-13. 파티션 설정(기본값)
+```
+Subnet: 192.168.0.0/24
+Address: 192.168.0.10
+Gateway: 192.168.0.1
+Name servers: 8.8.8.8
+Search domains: localhost
+```
 ![Ubuntu 20.04.1 LTS Server 설치-23](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-23.png)
 
-14. 파티션 설정 확인
+프록시 설정은 그대로 사용합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-24](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-24.png)
 
-15. 파티션 포맷
+미러 사이트도 기본으로 설정합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-25](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-25.png)
 
-16. 사용자 및 서버명 설정
+파티션 설정도 기본값인 전체 디스크 사용으로 설정합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-26](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-26.png)
 
-17. OpenSSH 설치
+파티션 설정을 확인합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-27](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-27.png)
 
-18. 서버용 프로그램 설치(기본값)
+파티션을 포맷합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-28](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-28.png)
 
-19. 설치
+사용자 계정 및 서버명을 설정합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-29](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-29.png)
 
-20. 설치 중
+OpenSSH를 설치합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-30](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-30.png)
 
-21. 재부팅
+서버용 프로그램은 기본값으로 설정합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-31](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-31.png)
 
-22. 로그인
+설치를 시작합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-32](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-32.png)
+
+설치가 완료되면 재부팅을 합니다.
 ![Ubuntu 20.04.1 LTS Server 설치-33](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-33.png)
 
----
+설정한 계정으로 로그인을 합니다.
+![Ubuntu 20.04.1 LTS Server 설치-34](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-34.png)
+![Ubuntu 20.04.1 LTS Server 설치-35](/assets/images/2020-09-03/ubuntu-20.04.1-lts-server-installation-35.png)
+
 
 이상으로 VirtualBox에 Ubuntu 20.04.1 LTS Server 설치하기였습니다.
-
-[Ubuntu 20.04.1 LTS Server 다운로드 링크]: https://ubuntu.com/download/server  

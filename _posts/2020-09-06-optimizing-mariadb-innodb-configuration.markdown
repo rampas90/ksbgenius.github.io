@@ -2,7 +2,7 @@
 layout: post
 title:  "[Wordpress] MariaDB 최적화 하기 — InnoDB 설정"
 description: "워드프레스에서 MariaDB 최적화를 위한 InnoDB 설정하기"
-date:   2020-10-06 09:00:00 +0900
+date:   2020-09-06 09:00:00 +0900
 categories: Wordpress
 ---
 ## MariaDB 설정파일 수정
@@ -13,7 +13,7 @@ categories: Wordpress
 sudo vi /etc/mysql/mariadb.conf.d/50-server.cnf
 ```
 
-![MariaDB 최적화 하기 — InnoDB 설정-1](/assets/images/2020-10-06/optimizing-mariadb-innodb-configuration-1.png)
+![MariaDB 최적화 하기 — InnoDB 설정-1](/assets/images/2020-09-06/optimizing-mariadb-innodb-configuration-1.png)
 
 ### Basic Settings 설정
 
@@ -27,7 +27,7 @@ skip-host-cache
 skip-name-resolve
 ```
 
-![MariaDB 최적화 하기 — InnoDB 설정-2](/assets/images/2020-10-06/optimizing-mariadb-innodb-configuration-2.png)
+![MariaDB 최적화 하기 — InnoDB 설정-2](/assets/images/2020-09-06/optimizing-mariadb-innodb-configuration-2.png)
 
 ### Fine Tuning 설정  
 
@@ -42,7 +42,7 @@ key_buffer_size = 256M
 max_connections = 10000
 ```
 
-![MariaDB 최적화 하기 — InnoDB 설정-3](/assets/images/2020-10-06/optimizing-mariadb-innodb-configuration-3.png)
+![MariaDB 최적화 하기 — InnoDB 설정-3](/assets/images/2020-09-06/optimizing-mariadb-innodb-configuration-3.png)
 
 ### InnoDB 설정
 
@@ -52,13 +52,13 @@ max_connections = 10000
 Swap 까지 끌어 쓸수도 있기 때문에  
 그거 보다는 조금 낮춰서 설정합니다.
 
-여기서는 총 메모리 2G중 1G를 할당해줬습니다.
+여기서는 총 메모리 4G중 2G를 할당해줬습니다.
 
 ```bash
-innodb_buffer_pool_size = 1G
+innodb_buffer_pool_size = 2G
 ```
 
-![MariaDB 최적화 하기 — InnoDB 설정-4](/assets/images/2020-10-06/optimizing-mariadb-innodb-configuration-4.png)
+![MariaDB 최적화 하기 — InnoDB 설정-4](/assets/images/2020-09-06/optimizing-mariadb-innodb-configuration-4.png)
 
 옵션을 모두 변경 완료했으면 `:wq`로 저장합니다.
 
@@ -68,6 +68,6 @@ innodb_buffer_pool_size = 1G
 sudo systemctl restart mariadb.service
 ```
 
-![MariaDB 최적화 하기 — InnoDB 설정-5](/assets/images/2020-10-06/optimizing-mariadb-innodb-configuration-5.png)
+![MariaDB 최적화 하기 — InnoDB 설정-5](/assets/images/2020-09-06/optimizing-mariadb-innodb-configuration-5.png)
 
 이상으로 MariaDB 최적화 하기 — InnoDB 설정이었습니다.

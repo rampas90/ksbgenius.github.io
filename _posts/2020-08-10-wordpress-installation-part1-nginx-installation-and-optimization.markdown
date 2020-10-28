@@ -2,7 +2,7 @@
 layout: post
 title:  "[Wordpress] 설치하기 1부 - Nginx 설치 및 최적화"
 description: "Ubuntu 20.04.1 LTS에 워드프레스 설치를 위한 Nginx 설치 및 최적화"
-date:   2020-09-10 09:00:00 +0900
+date:   2020-08-10 09:00:00 +0900
 categories: Wordpress
 ---
 
@@ -14,7 +14,7 @@ categories: Wordpress
 sudo apt update && apt upgrade -y
 ```
 
-![Nginx 설치 및 최적화-1](/assets/images/2020-09-10/nginx-installation-and-optimization-1.png)
+![Nginx 설치 및 최적화-1](/assets/images/2020-08-10/nginx-installation-and-optimization-1.png)
 
 Nginx 패키지 설치 이전에 선행작업을 진행합니다.
 
@@ -22,7 +22,7 @@ Nginx 패키지 설치 이전에 선행작업을 진행합니다.
 sudo apt install curl gnupg2 ca-certificates lsb-release
 ```
 
-![Nginx 설치 및 최적화-2](/assets/images/2020-09-10/nginx-installation-and-optimization-2.png)
+![Nginx 설치 및 최적화-2](/assets/images/2020-08-10/nginx-installation-and-optimization-2.png)
 
 ## Nginx 설치
 
@@ -32,7 +32,7 @@ sudo apt install curl gnupg2 ca-certificates lsb-release
 sudo apt update
 ```
 
-![Nginx 설치 및 최적화-3](/assets/images/2020-09-10/nginx-installation-and-optimization-3.png)
+![Nginx 설치 및 최적화-3](/assets/images/2020-08-10/nginx-installation-and-optimization-3.png)
 
 Nginx를 설치합니다.
 
@@ -40,7 +40,7 @@ Nginx를 설치합니다.
 sudo apt install nginx -y
 ```
 
-![Nginx 설치 및 최적화-4](/assets/images/2020-09-10/nginx-installation-and-optimization-4.png)
+![Nginx 설치 및 최적화-4](/assets/images/2020-08-10/nginx-installation-and-optimization-4.png)
 
 Nginx를 시작합니다.
 
@@ -48,7 +48,7 @@ Nginx를 시작합니다.
 sudo systemctl start nginx.service
 ```
 
-![Nginx 설치 및 최적화-5](/assets/images/2020-09-10/nginx-installation-and-optimization-5.png)
+![Nginx 설치 및 최적화-5](/assets/images/2020-08-10/nginx-installation-and-optimization-5.png)
 
 Nginx 상태를 확인합니다.
 
@@ -56,7 +56,7 @@ Nginx 상태를 확인합니다.
 systemctl status nginx.service
 ```
 
-![Nginx 설치 및 최적화-6](/assets/images/2020-09-10/nginx-installation-and-optimization-6.png)
+![Nginx 설치 및 최적화-6](/assets/images/2020-08-10/nginx-installation-and-optimization-6.png)
 
 Nginx 버전을 확인합니다.
 
@@ -64,7 +64,7 @@ Nginx 버전을 확인합니다.
 nginx -v
 ```
 
-![Nginx 설치 및 최적화-7](/assets/images/2020-09-10/nginx-installation-and-optimization-7.png)
+![Nginx 설치 및 최적화-7](/assets/images/2020-08-10/nginx-installation-and-optimization-7.png)
 
 ## Nginx 자동시작(서비스) 등록
 
@@ -74,37 +74,37 @@ nginx -v
 sudo systemctl enable nginx.service
 ```
 
-![Nginx 설치 및 최적화-8](/assets/images/2020-09-10/nginx-installation-and-optimization-8.png)
+![Nginx 설치 및 최적화-8](/assets/images/2020-08-10/nginx-installation-and-optimization-8.png)
 
 ## Nginx root 경로 수정  
 
 설치시 기본 경로는 `/var/www/html`입니다.  
-여기서는 `/home/drc/www`로 변경하려고 합니다.
+여기서는 `/home/test/www`로 변경하려고 합니다.
 
 ```bash
 sudo vi /etc/nginx/sites-available/default
 ```
 
-![Nginx 설치 및 최적화-9](/assets/images/2020-09-10/nginx-installation-and-optimization-9.png)
+![Nginx 설치 및 최적화-9](/assets/images/2020-08-10/nginx-installation-and-optimization-9.png)
 
 `root` 부분을 변경 후, `:wq`로 저장합니다.
 
 ```bash
-root /home/drc/www;
+root /home/test/www;
 ```
 
-여기서는 계정명이 `drc`입니다.
-![Nginx 설치 및 최적화-10](/assets/images/2020-09-10/nginx-installation-and-optimization-10.png)
+여기서는 계정명이 `test`입니다.
+![Nginx 설치 및 최적화-10](/assets/images/2020-08-10/nginx-installation-and-optimization-10.png)
 
 테스트를 위해 기본경로에 설치된 `index.nginx-debian.html` 파일을  
-새로 변경한 `/home/drc/www`경로로 복사해줍니다.
+새로 변경한 `/home/test/www`경로로 복사해줍니다.
 
 ```bash
-mkdir /home/drc/www
-cp /var/www/html/index.nginx-debian.html /home/drc/www/index.nginx-debian.html
+mkdir /home/test/www
+cp /var/www/html/index.nginx-debian.html /home/test/www/index.nginx-debian.html
 ```
 
-![Nginx 설치 및 최적화-11](/assets/images/2020-09-10/nginx-installation-and-optimization-11.png)
+![Nginx 설치 및 최적화-11](/assets/images/2020-08-10/nginx-installation-and-optimization-11.png)
 
 Nginx를 재시작합니다.
 
@@ -112,7 +112,7 @@ Nginx를 재시작합니다.
 sudo systemctl restart nginx.service
 ```
 
-![Nginx 설치 및 최적화-12](/assets/images/2020-09-10/nginx-installation-and-optimization-12.png)
+![Nginx 설치 및 최적화-12](/assets/images/2020-08-10/nginx-installation-and-optimization-12.png)
 
 ## Nginx 구동 테스트
 
@@ -122,10 +122,16 @@ sudo systemctl restart nginx.service
 sudo netstat -lntp
 ```
 
-![Nginx 설치 및 최적화-13](/assets/images/2020-09-10/nginx-installation-and-optimization-13.png)
+netstat 명령어가 안먹히면 `net-tools`를 설치해주세요.
+
+```bash
+sudo apt install net-tools
+```
+
+![Nginx 설치 및 최적화-13](/assets/images/2020-08-10/nginx-installation-and-optimization-13.png)
 
 웹브라우저에서 설치된 서버 IP로 접속합니다.
-![Nginx 설치 및 최적화-14](/assets/images/2020-09-10/nginx-installation-and-optimization-14.png)
+![Nginx 설치 및 최적화-14](/assets/images/2020-08-10/nginx-installation-and-optimization-14.png)
 
 ## Nginx 최적화 설정
 
@@ -141,7 +147,7 @@ Nginx의 경우 이벤트 중심의 아키텍처가 있습니다.
 ps -ef | grep nginx
 ```
 
-![Nginx 설치 및 최적화-15](/assets/images/2020-09-10/nginx-installation-and-optimization-15.png)
+![Nginx 설치 및 최적화-15](/assets/images/2020-08-10/nginx-installation-and-optimization-15.png)
 
 현재 작업중인 서버의 CPU 프로세스 개수는 1개이며  
 worker_process가 auto로 설정되어 있어  
@@ -175,7 +181,7 @@ Nginx는 다수의 작업자 프로세스를 실행할 수 있으며,
 sudo vi /etc/nginx/nginx.conf
 ```
 
-![Nginx 설치 및 최적화-16](/assets/images/2020-09-10/nginx-installation-and-optimization-16.png)
+![Nginx 설치 및 최적화-16](/assets/images/2020-08-10/nginx-installation-and-optimization-16.png)
 
 아래부분과 같이 변경 후, `:wq`로 저장합니다.
 
@@ -187,7 +193,7 @@ events {
 }
 ```
 
-![Nginx 설치 및 최적화-17](/assets/images/2020-09-10/nginx-installation-and-optimization-17.png)
+![Nginx 설치 및 최적화-17](/assets/images/2020-08-10/nginx-installation-and-optimization-17.png)
 
 Nginx 재시작
 
@@ -195,7 +201,7 @@ Nginx 재시작
 sudo systemctl restart nginx.service
 ```
 
-![Nginx 설치 및 최적화-18](/assets/images/2020-09-10/nginx-installation-and-optimization-18.png)
+![Nginx 설치 및 최적화-18](/assets/images/2020-08-10/nginx-installation-and-optimization-18.png)
 
 worker process 재확인
 
@@ -203,7 +209,7 @@ worker process 재확인
 ps -ef | grep nginx
 ```
 
-![Nginx 설치 및 최적화-19](/assets/images/2020-09-10/nginx-installation-and-optimization-19.png)
+![Nginx 설치 및 최적화-19](/assets/images/2020-08-10/nginx-installation-and-optimization-19.png)
 
 `nginx: worker process`가 4개로 변경된 것이 보여집니다.
 

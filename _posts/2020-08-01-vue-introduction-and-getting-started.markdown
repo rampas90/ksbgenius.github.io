@@ -7,7 +7,7 @@ Vue는 사용자 인터페이스를 만들기 위한
 쉽게말해 React, Angular와 같은  
 `자바스크립트 프레임워크`의 한 종류라고  
 생각하면 될것 같습니다."
-date:   2020-09-01 09:00:00 +0900
+date:   2020-08-01 09:00:00 +0900
 categories: Vue
 ---
 ## __소개__
@@ -28,15 +28,13 @@ Nodejs 기반으로 운영하느냐 아니냐에 따라서
 설치하고 사용하는 방법에 대해서  
 정리해보도록 하겠습니다.
 
----
-
 ## __설치__
 
 `<script>에 추가`  
 
 script 태그에 `https://cdn.jsdelivr.net/npm/vue`를 추가합니다.  
 (해당 링크는 npm에 올라간 최신 버전입니다.)  
-[여기서][npm 패키지 원본]{: target="_blank"} npm 패키지 원본을 확인 할 수 있습니다.
+[여기서](https://cdn.jsdelivr.net/npm/vue){: target="_blank"} npm 패키지 원본을 확인 할 수 있습니다.
 
 {% highlight html %}
 {% raw %}
@@ -77,6 +75,4 @@ NPM을 통해 Vue를 설치하고,
 Vue 프로젝트를 생성하는 방법이 있습니다만,  
 Vue에서 공식적으로 제공하는 vue-cli를 사용하여 Vue 프로젝트를 생성하는 것이 정신 건강에 좋을 것 같습니다.
 
-
-[npm 패키지 원본]: https://cdn.jsdelivr.net/npm/vue
-
+이상으로 Vue 소개 및 시작하기였습니다.

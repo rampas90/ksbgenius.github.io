@@ -55,7 +55,7 @@ VirtualBox 실행 및 새로만들기를 클릭합니다.
 
 여기서  
 이름은 `enp8s0`  
-어댑터 종류는 `Intel PRO/1000 MT Desktop(82540EM)`로 선택되어 있는데 
+어댑터 종류는 `Intel PRO/1000 MT Desktop(82540EM)`로 선택되어 있는데
 
 이름 및 어댑터 종류의 명칭은 다를 수 있습니다.
 

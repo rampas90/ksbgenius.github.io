@@ -2,7 +2,7 @@
 layout: post
 title:  "[Wordpress] 설치하기 2부 - PHP-FPM 설치 및 설정"
 description: "Ubuntu 20.04.1 LTS에 워드프레스 설치를 위한 PHP-FPM 설치 및 설정"
-date:   2020-09-15 09:00:00 +0900
+date:   2020-08-15 09:00:00 +0900
 categories: Wordpress
 ---
 ## php-fpm 설치(모듈 포함)
@@ -13,7 +13,7 @@ categories: Wordpress
 sudo apt install -y php7.4-fpm php7.4-gd php7.4-json php7.4-mysql php7.4-curl php7.4-mbstring php7.4-intl php-imagick php7.4-xml php7.4-zip
 ```
 
-![PHP-FPM 설치 및 설정-1](/assets/images/2020-09-15/php-fpm-install-and-configure-1.png)
+![PHP-FPM 설치 및 설정-1](/assets/images/2020-08-15/php-fpm-install-and-configure-1.png)
 
 PHP 설치확인
 
@@ -21,7 +21,7 @@ PHP 설치확인
 php -v
 ```
 
-![PHP-FPM 설치 및 설정-2](/assets/images/2020-09-15/php-fpm-install-and-configure-2.png)
+![PHP-FPM 설치 및 설정-2](/assets/images/2020-08-15/php-fpm-install-and-configure-2.png)
 
 ## php-fpm 설정
 
@@ -32,15 +32,16 @@ php가 동작하는 방식에는 소켓통신, IP통신 두가지가 있습니�
 sudo vi /etc/php/7.4/fpm/pool.d/www.conf
 ```
 
-![PHP-FPM 설치 및 설정-3](/assets/images/2020-09-15/php-fpm-install-and-configure-3.png)
+![PHP-FPM 설치 및 설정-3](/assets/images/2020-08-15/php-fpm-install-and-configure-3.png)
 
-`/listen =`을 검색하여 아래와 같이 수정합니다.
+`/listen =`을 검색하여 아래와 같이 수정 후,  
+`:wq` 저장합니다.
 
 ```bash
 listen = 127.0.0.1:9000
 ```
 
-![PHP-FPM 설치 및 설정-4](/assets/images/2020-09-15/php-fpm-install-and-configure-4.png)
+![PHP-FPM 설치 및 설정-4](/assets/images/2020-08-15/php-fpm-install-and-configure-4.png)
 
 PHP 재시작
 
@@ -48,7 +49,7 @@ PHP 재시작
 sudo systemctl restart php7.4-fpm.service
 ```
 
-![PHP-FPM 설치 및 설정-5](/assets/images/2020-09-15/php-fpm-install-and-configure-5.png)
+![PHP-FPM 설치 및 설정-5](/assets/images/2020-08-15/php-fpm-install-and-configure-5.png)
 
 `127.0.0.1:9000` 수신확인
 
@@ -56,7 +57,7 @@ sudo systemctl restart php7.4-fpm.service
 sudo netstat -lntp
 ```
 
-![PHP-FPM 설치 및 설정-6](/assets/images/2020-09-15/php-fpm-install-and-configure-6.png)  
+![PHP-FPM 설치 및 설정-6](/assets/images/2020-08-15/php-fpm-install-and-configure-6.png)  
 
 ## PHP 최적화(프로세스)
 
@@ -66,7 +67,7 @@ sudo netstat -lntp
 ps -ef | grep php
 ```
 
-![PHP-FPM 설치 및 설정-7](/assets/images/2020-09-15/php-fpm-install-and-configure-7.png)
+![PHP-FPM 설치 및 설정-7](/assets/images/2020-08-15/php-fpm-install-and-configure-7.png)
 
 설정값 변경
 
@@ -74,9 +75,10 @@ ps -ef | grep php
 sudo vi /etc/php/7.4/fpm/pool.d/www.conf
 ```
 
-![PHP-FPM 설치 및 설정-8](/assets/images/2020-09-15/php-fpm-install-and-configure-8.png)
+![PHP-FPM 설치 및 설정-8](/assets/images/2020-08-15/php-fpm-install-and-configure-8.png)
 
-`/pm = dynamic`으로 검색 후 수정
+`/pm = dynamic`으로 검색 후  
+아래와 같이 수정 후, `:wq` 저장합니다.
 
 ```bash
 pm.max_children = 120
@@ -85,7 +87,7 @@ pm.min_spare_servers = 6
 pm.max_spare_servers = 18
 ```
 
-![PHP-FPM 설치 및 설정-9](/assets/images/2020-09-15/php-fpm-install-and-configure-9.png)
+![PHP-FPM 설치 및 설정-9](/assets/images/2020-08-15/php-fpm-install-and-configure-9.png)
 
 PHP 재시작
 
@@ -93,7 +95,7 @@ PHP 재시작
 sudo systemctl restart php7.4-fpm.service
 ```
 
-![PHP-FPM 설치 및 설정-10](/assets/images/2020-09-15/php-fpm-install-and-configure-10.png)
+![PHP-FPM 설치 및 설정-10](/assets/images/2020-08-15/php-fpm-install-and-configure-10.png)
 
 프로세스 확인
 
@@ -101,7 +103,7 @@ sudo systemctl restart php7.4-fpm.service
 ps -ef | grep php
 ```
 
-![PHP-FPM 설치 및 설정-11](/assets/images/2020-09-15/php-fpm-install-and-configure-11.png)
+![PHP-FPM 설치 및 설정-11](/assets/images/2020-08-15/php-fpm-install-and-configure-11.png)
 
 ## PHP 최적화(메모리 및 업로드 크기)
 
@@ -111,9 +113,10 @@ php.ini 파일 수정
 sudo vi /etc/php/7.4/fpm/php.ini
 ```
 
-![PHP-FPM 설치 및 설정-12](/assets/images/2020-09-15/php-fpm-install-and-configure-12.png)
+![PHP-FPM 설치 및 설정-12](/assets/images/2020-08-15/php-fpm-install-and-configure-12.png)
 
-아래와 같이 메모리와 용량을 용도에 맞춰서 수정
+아래와 같이 메모리와 용량을 용도에 맞춰서 수정 후,  
+`:wq` 저장합니다.
 
 ```bash
 memory_limit = 1024M
@@ -121,9 +124,9 @@ post_max_size = 128M
 upload_max_filesize = 128M
 ```
 
-![PHP-FPM 설치 및 설정-13](/assets/images/2020-09-15/php-fpm-install-and-configure-13.png)
-![PHP-FPM 설치 및 설정-14](/assets/images/2020-09-15/php-fpm-install-and-configure-14.png)
-![PHP-FPM 설치 및 설정-15](/assets/images/2020-09-15/php-fpm-install-and-configure-15.png)
+![PHP-FPM 설치 및 설정-13](/assets/images/2020-08-15/php-fpm-install-and-configure-13.png)
+![PHP-FPM 설치 및 설정-14](/assets/images/2020-08-15/php-fpm-install-and-configure-14.png)
+![PHP-FPM 설치 및 설정-15](/assets/images/2020-08-15/php-fpm-install-and-configure-15.png)
 
 PHP 재시작
 
@@ -131,7 +134,7 @@ PHP 재시작
 sudo systemctl restart php7.4-fpm.service
 ```
 
-![PHP-FPM 설치 및 설정-16](/assets/images/2020-09-15/php-fpm-install-and-configure-16.png)
+![PHP-FPM 설치 및 설정-16](/assets/images/2020-08-15/php-fpm-install-and-configure-16.png)
 
 ## Nginx 설정파일 변경
 
@@ -141,7 +144,10 @@ default 파일 수정
 sudo vi /etc/nginx/sites-available/default
 ```
 
-![PHP-FPM 설치 및 설정-17](/assets/images/2020-09-15/php-fpm-install-and-configure-17.png)
+![PHP-FPM 설치 및 설정-17](/assets/images/2020-08-15/php-fpm-install-and-configure-17.png)
+
+아래 내용 참고하여 수정 후,  
+`:wq` 저장합니다.
 
 ```bash
 ##
@@ -191,7 +197,7 @@ server {
 	# include snippets/snakeoil.conf;
 
 	#root /var/www/html;
-	root /home/drc/www;
+	root /home/test/www;
 
 	# Add index.php to the list if you are using PHP
 	index index.php index.html index.htm index.nginx-debian.html;
@@ -265,23 +271,21 @@ Nginx 재시작
 sudo systemctl restart nginx.service
 ```
 
-![PHP-FPM 설치 및 설정-18](/assets/images/2020-09-15/php-fpm-install-and-configure-18.png)
+![PHP-FPM 설치 및 설정-18](/assets/images/2020-08-15/php-fpm-install-and-configure-18.png)
 
 ## PHP 테스트
 
 PHP 파일을 샘플로 만들어서 진행  
 default의 root 경로에 넣어주면 됩니다.  
-저같은 경우 /home/drc/www 입니다  
+저같은 경우 /home/test/www 입니다  
 
 ```bash
-mkdir -p /home/drc/www
-vi /home/drc/www/index.php  
+vi /home/test/www/index.php  
 ```
 
-![PHP-FPM 설치 및 설정-19](/assets/images/2020-09-15/php-fpm-install-and-configure-19.png)
-![PHP-FPM 설치 및 설정-20](/assets/images/2020-09-15/php-fpm-install-and-configure-20.png)
+![PHP-FPM 설치 및 설정-19](/assets/images/2020-08-15/php-fpm-install-and-configure-19.png)
 
-내용 간단하게 복붙 후, `:wq` 저장
+내용 간단하게 복붙 후, `:wq` 저장합니다.
 
 ```php
 <?php
@@ -289,10 +293,10 @@ phpinfo();
 ?>
 ```
 
-![PHP-FPM 설치 및 설정-21](/assets/images/2020-09-15/php-fpm-install-and-configure-21.png)
+![PHP-FPM 설치 및 설정-20](/assets/images/2020-08-15/php-fpm-install-and-configure-20.png)
 
 웹에서 IP 접속 및 정상 작동 확인
 
-![PHP-FPM 설치 및 설정-22](/assets/images/2020-09-15/php-fpm-install-and-configure-22.png)
+![PHP-FPM 설치 및 설정-21](/assets/images/2020-08-15/php-fpm-install-and-configure-21.png)
 
 이상으로 Wordpress 설치하기 2부 - PHP-FPM 설치 및 설정이었습니다.

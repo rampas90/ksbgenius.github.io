@@ -14,6 +14,20 @@ permalink: /about/
 ## __경력사항__
 * 2020.06 ~ 현재
     * 웹개발 프리랜서
+        * [DRC 홈페이지 개발 및 유지보수]
+            - 설치형 워드프레스에 Vue, Vuetify를 이용한 회사 소개 홈페이지 제작
+            - 프론트 & 백엔드 개발
+            - 참여인원 2명 (디자이너1, 개발자1)
+            - PHP, Mysql, Wordpress, Vue, Vuetify, Axios, store, Redux Framework
+            - github 코드관리
+            - Ubuntu 20.01 클라우드 서버
+            - 웹서버 환경 구축(Nginx, PHP, Mysql)
+            - Let's Encrypt SSL 인증서 설치 및 자동 갱신 crontab
+            - 네이버, 구글 웹마스터도구
+            - 구글 애널리틱스
+            - [www.drc-corp.com](https://www.drc-corp.com){: target="_blank"}
+
+
 
 * 2017.12 ~ 2020.05 (2년 6개월) - 진\*컴퍼니 개발팀 사원
     * Nodejs 환경

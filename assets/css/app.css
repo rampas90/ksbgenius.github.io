@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+* { font-family: 'Noto Sans KR', sans-serif; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+ul { list-style-type: none; }
+
+.container { max-width: 832px; }
+
+.site-title { display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 400; color: #231916 !important; }
+.footer-title { display: inline-flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 400; color: #231916 !important; }
+
+.contact-list { padding-left: 0 !important; }
+
+.social-media-list { font-size: 0.875rem; font-weight: 400; padding-left: 0 !important;  }
+.social-media-list li a { display: inline-flex; align-items: center; }
+.social-media-list li+li { padding-top: 4px; }
+.post-list { padding-top: 32px; }
+.post-list .list-item { padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,.12); }
+.post-list .list-item .item-link { font-size: 1.5rem; font-weight: 500; }
+.post-list .list-item .date { font-size: 0.875rem; font-weight: 400; color:#bdbdbd; }
+.rss-subscribe { font-size: 0.875rem; font-weight: 400; color: #bdbdbd; margin: 32px 0; }
+
+/* About */
+.contents-type-about { padding-top: 32px; }
+.contents-type-about .contents-header { display: flex; align-items: center; padding-bottom: 8px !important; border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+.contents-type-about .contents-header .title { font-size: 1.5rem !important; font-weight: 500; color: #c0986e; margin: 0; }
+.contents-type-about .contents-header .sub-title { font-size: 1.125rem !important; font-weight: 500; color: #000; padding-left: 8px; margin: 0; }
+.contents-type-about .content { color: #9e9e9e; margin-bottom: 100px; padding-top: 16px; }
+.contents-type-about .content .skill { font-weight: 300; color: #000; padding-left: 16px; }
+.contents-type-about .content .skill-tree .list-item { margin-bottom: 24px; padding-right: 16px; }
+.contents-type-about .content .skill-tree .list-item .title { font-size: 1rem !important; font-weight: 400; color:#000; }
+.contents-type-about .content .skill-tree .list-item .division { font-size: 12px; font-weight: 400; color:#009688; }
+.contents-type-about .content .skill-tree .list-item .division.toy { color:#2196F3; }
+.contents-type-about .content .skill-tree .list-item .description { font-size: 14px; font-weight: 300; color:#9e9e9e; white-space: pre-line; word-break: keep-all; }
+.contents-type-about .content .division { font-size: 20px; font-weight: 300; color: #231916; padding: 16px 0; }
+.contents-type-about .content .period { font-size: 0.875rem; font-weight: 400; color: #000; }
+.contents-type-about .content .period-calculator { font-size: 0.75rem; font-weight: 400; color: #1976d2; }
+
+.contents-type-about .content .name { font-size: 1rem; font-weight: 700; color: #000; }
+.contents-type-about .content .position { font-size: 0.875rem; font-weight: 400; color: #9e9e9e; padding-left: 8px; }
+
+.contents-type-about .content .description { font-size: 0.875rem; font-weight: 400; color: #000; white-space: pre-line; word-break: keep-all; }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "ko" }}">
+
+  {%- include head.html -%}
+
+  <body>
+    <v-app id="app">
+      {%- include header.html -%}
+
+      <main is="v-main">
+        <div is="v-container">
+          {{ content }}
+        </div>
+      </main>
+      
+      {%- include footer.html -%}
+    </v-app>
+
+    <script src="{{ "/assets/lib/babel-polyfill/polyfill.min.js" | relative_url }}"></script>  
+    <script src="{{ "/assets/lib/es6-promise/es6-promise.min.js" | relative_url }}"></script>  
+    <script src="{{ "/assets/lib/es6-promise/es6-promise.auto.min.js" | relative_url }}"></script>  
+    <script src="{{ "/assets/lib/vue/vue.min.js" | relative_url }}"></script>  
+    <script src="{{ "/assets/lib/vuetify/vuetify.min.js" | relative_url }}"></script>  
+    <script src="{{ "/assets/js/app.js" | relative_url }}"></script>
+
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+      {%- include google-analytics.html -%}
+    {%- endif -%}
+
+  </body>
+</html>

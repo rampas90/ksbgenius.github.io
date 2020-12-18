@@ -1,38 +1,52 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+<footer is="v-footer" absolute app>
+  <v-container>
+    <v-row no-gutters>
+      <v-col cols="12">
+        <h2>
+          <a href="{{ "/" | relative_url }}" class="footer-title">{{ site.title | escape }}</a>
+        </h2>
+      </v-col>
+      <v-col cols="12">
+        <h3 style="font-size: 14px;
+        font-weight: 400; color:#9e9e9e;">{{ site.description | escape }}</h3>
+      </v-col>
+      
+      <v-col cols="12" class="mt-4">
+        <v-row no-gutters>
+          <v-col cols="12" md="4" class="pr-4 mb-4">
+            <ul class="contact-list">
+              <li>
+                <div style="font-size: 14px; font-weight: 400; color:#9e9e9e;">
+                  {{ site.author | escape }}
+                </div>
+              </li>
+              <li>
+                <a href="mailto:{{ site.email }}" style="font-size: 14px; font-weight: 400;">{{ site.email }}</a>
+              </li>
 
-  <div class="wrapper">
+            </ul>
+            
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-    <p style="font-size:14px; word-break:keep-all; color:#828282; white-space:pre-line;">천재는 노력하는 사람을 이길 수 없고, 
-      노력하는 사람은 즐기는 자를 이길 수 없다.
-    </p>
+            
+            
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
-      </div>
 
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-      </div>
+          </v-col>
+          <v-col cols="12" md="3" class="pr-4 mb-4">
+            {%- include social.html -%}
+          </v-col>
+          <v-col cols="12" md="5" class="pr-4 mb-4" style="font-size:14px; font-weight: 400; word-break:keep-all; color:#9e9e9e; white-space:pre-line;">천재는 노력하는 사람을 이길 수 없고, 
+            노력하는 사람은 즐기는 자를 이길 수 없다.
+            
+          </v-col>
 
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-      </div>
-    </div>
+        </v-row>
 
-  </div>
-
+      </v-col>
+    </v-row>
+    
+  </v-row>
+    
+  </v-container>
+  
 </footer>

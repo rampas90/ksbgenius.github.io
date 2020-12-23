@@ -3,7 +3,7 @@ layout: post
 title:  "[Wordpress] 관리자 페이지 글 목록에 칼럼 추가하기"
 description: "워드프레스 관리자 페이지에서 글 목록에 칼럼 추가하는 방법"
 date:   2020-11-15 09:00:00 +0900
-categories: Wordpress
+categories: wordpress
 ---
 대표 이미지(썸네일)가 글 목록에 표시되어 있으면  
 어느 글에 어떤 특성 이미지가 지정되어 있는지,  

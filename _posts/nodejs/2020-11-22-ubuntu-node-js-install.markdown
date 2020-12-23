@@ -23,13 +23,13 @@ PPA에는 공식 Ubuntu 리포지토리보다 더 많은 버전의 Node.js가 �
 
 참고사항 : [https://github.com/nodesource/distributions](https://github.com/nodesource/distributions){: target="_blank"}
 
-### Node.js v14.x :
+### Node.js v14.x
 
 ```bash
 sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 ```
 
-### Node.js v12.x:
+### Node.js v12.x
 
 ```bash
 sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -

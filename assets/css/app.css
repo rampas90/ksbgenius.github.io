@@ -4,7 +4,9 @@
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+/*
 ul { list-style-type: none; }
+*/
 
 .container { max-width: 832px; }
 

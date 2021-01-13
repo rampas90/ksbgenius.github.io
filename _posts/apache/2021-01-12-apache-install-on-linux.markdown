@@ -19,7 +19,16 @@ sudo apt update && apt upgrade -y
 sudo apt install -y apache2
 ```
 
-![리눅스에 아파치 설치하기-1](/assets/images/2021-01-12/apache-install-on-linux-2.png)
+![리눅스에 아파치 설치하기-2](/assets/images/2021-01-12/apache-install-on-linux-2.png)
+
+## mod_rewrite 활성화
+
+```
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+```
+
+![리눅스에 아파치 설치하기-3](/assets/images/2021-01-12/apache-install-on-linux-3.png)
 
 ## 서비스 상태 확인
 
@@ -27,13 +36,13 @@ sudo apt install -y apache2
 systemctl status apache2.service
 ```
 
-![리눅스에 아파치 설치하기-1](/assets/images/2021-01-12/apache-install-on-linux-3.png)
+![리눅스에 아파치 설치하기-4](/assets/images/2021-01-12/apache-install-on-linux-4.png)
 
 ## 웹접속 확인
 
 `localhost` 또는 `127.0.0.1`
 
-![리눅스에 아파치 설치하기-1](/assets/images/2021-01-12/apache-install-on-linux-4.png)
+![리눅스에 아파치 설치하기-5](/assets/images/2021-01-12/apache-install-on-linux-5.png)
 
 ## 서비스 명령어
 

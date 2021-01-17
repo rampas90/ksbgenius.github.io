@@ -28,6 +28,14 @@ sudo a2enmod rewrite
 sudo systemctl restart apache2
 ```
 
+## DocumentRoot 사용자 경로로 설정 및 실행 권한 부여
+
+```bash
+sudo chmod +x /home/{사용자명}/
+sudo chmod +x /home/{사용자명}/{프로젝트명}/
+sudo chmod +x /home/{사용자명}/{프로젝트명}/public/
+```            
+
 ![리눅스에 아파치 설치하기-3](/assets/images/2021-01-12/apache-install-on-linux-3.png)
 
 ## 서비스 상태 확인
